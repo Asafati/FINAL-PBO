@@ -7,19 +7,15 @@ import java.util.List;
 
 public class WordServiceImpl implements WordService {
     private final WordRepository wordRepository;
-
-    // Konstruktor untuk menginisialisasi WordRepository
     public WordServiceImpl(WordRepository wordRepository) {
         this.wordRepository = wordRepository;
     }
 
-    // Mendapatkan semua kata dari repositori
     @Override
     public List<Word> getWordList() {
         return wordRepository.getAll();
     }
 
-    // Menambahkan kata baru ke repositori
     @Override
     public void addWord(String word, String meaning) {
         if (word == null || word.isBlank()) {
@@ -35,13 +31,11 @@ public class WordServiceImpl implements WordService {
         System.out.println("Kata berhasil ditambahkan.");
     }
 
-    // Menghapus kata dari repositori
     @Override
     public Boolean removeWord(String word) {
         return wordRepository.remove(word);
     }
 
-    // Mengedit arti kata
     @Override
     public Boolean editWord(String word, String newMeaning) {
         if (newMeaning == null || newMeaning.isBlank()) {
