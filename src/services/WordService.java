@@ -5,8 +5,8 @@ import entities.Word;
 import java.util.List;
 
 public interface WordService {
-    List<Word> getWordList();        // Mendapatkan daftar kata
-    void addWord(String word, String meaning); // Menambahkan kata baru
+    List<Word> getWordList();
+    void addWord(String word, String meaning);
     Boolean removeWord(String word); // Menghapus kata
-    Boolean editWord(String word, String newMeaning); // Mengedit arti kata
+    Boolean editWord(String word, String newMeaning);
 }

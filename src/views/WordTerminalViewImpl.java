@@ -10,18 +10,15 @@ public class WordTerminalViewImpl implements TodoListView {
     private static final Scanner scanner = new Scanner(System.in);
     private final WordService wordService;
 
-    // Konstruktor untuk menginisialisasi WordService
     public WordTerminalViewImpl(WordService wordService) {
         this.wordService = wordService;
     }
 
-    // Method untuk menerima input dari pengguna
     public String input(String info) {
         System.out.print(info + " : ");
         return scanner.nextLine();
     }
 
-    // Menampilkan menu utama
     public void showMainMenu() {
         boolean isRunning = true;
         while (isRunning) {
@@ -54,7 +51,6 @@ public class WordTerminalViewImpl implements TodoListView {
         }
     }
 
-    // Menampilkan daftar kata
     public void showWordList() {
         System.out.println("\nDAFTAR KATA:");
         List<Word> wordList = wordService.getWordList();
@@ -68,7 +64,6 @@ public class WordTerminalViewImpl implements TodoListView {
         }
     }
 
-    // Menampilkan menu untuk menambahkan kata
     public void showMenuAddWord() {
         System.out.println("\nMENAMBAH KATA");
         String word = input("Masukkan kata (x untuk batal)");
@@ -81,7 +76,6 @@ public class WordTerminalViewImpl implements TodoListView {
         System.out.println("Kata berhasil ditambahkan.");
     }
 
-    // Menampilkan menu untuk menghapus kata
     public void showMenuRemoveWord() {
         System.out.println("\nMENGHAPUS KATA");
         String word = input("Masukkan kata yang ingin dihapus (x untuk batal)");
@@ -95,7 +89,6 @@ public class WordTerminalViewImpl implements TodoListView {
         }
     }
 
-    // Menampilkan menu untuk mengedit arti kata
     public void showMenuEditWord() {
         System.out.println("\nMENGEDIT ARTI KATA");
         String word = input("Masukkan kata yang ingin diedit (x untuk batal)");
@@ -112,7 +105,6 @@ public class WordTerminalViewImpl implements TodoListView {
         }
     }
 
-    // Menjalankan aplikasi dengan tampilan utama
     @Override
     public void run() {
         showMainMenu();
